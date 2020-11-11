@@ -1,0 +1,177 @@
+/*Light Mode*/
+.light {
+    background: linear-gradient(hsl(0, 0%, 100%) 30%, hsl(225, 100%, 98%) 30% 100%);
+    
+}
+body {
+    margin: 10px 100px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    background: hsl(230, 17%, 14%);
+}
+
+h1, .total{
+   margin-bottom: 0;
+   margin-left: 80px;
+}
+
+h2 {
+    margin: 50px 0 15px 80px;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+/*Checkbox/toggle switch*/
+.mode {
+    color: hsl(228, 34%, 66%);
+    margin-right: 80px;
+}
+
+.total {
+    font-size: 13px;
+    margin-bottom: 30px;
+    color: hsl(228, 34%, 66%);
+    display: inline-block;
+}
+
+.gridLarge{
+    display: grid;
+    grid-template-rows: 1;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 30px;
+    height: 32vh;
+    margin: 0 80px;
+}
+
+.gridSmall{
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+    column-gap: 30px;
+    row-gap: 20px;
+    height: 30vh;
+    margin: 0 80px;
+}
+
+.gridItem {
+    border-radius: 5px;
+    background-color: hsl(228, 28%, 20%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.gridItem:hover {
+    background-color: hsl(228, 28%, 25%);
+}
+
+.handle {
+   color: hsl(228, 34%, 66%);
+}
+
+.numFollowers{
+    font-size: 70px;
+    margin-top: 20px;
+    font-weight: bold;
+    padding: 0;
+    color: white;
+}
+
+.followers {
+    color:  hsl(228, 34%, 66%);
+    letter-spacing: 6px;
+}
+
+.change{
+    font-size: 14px;
+    margin-top: 30px;
+    padding-left: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35%;
+}
+
+svg{
+    margin-right: 5px;
+}
+
+.up {
+    color: hsl(163, 72%, 41%);
+}
+
+.down {
+    color: hsl(356, 69%, 56%);
+}
+
+/*Individual Large Cards*/
+
+.gridL1{
+    grid-column: 1 / span 1;
+    border-top: solid 5px hsl(208, 92%, 53%);
+}
+
+.gridL2{
+    grid-column: 2 / span 1;
+    border-top: solid 5px hsl(203, 89%, 53%);
+}
+
+.gridL3 {
+    grid-column: 3 / span 1;
+    border-top: solid 5px;
+    border-image: linear-gradient(.25turn, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+    border-image-slice: 1;
+}
+
+.gridL4 {
+    grid-column: 4 / span 1;
+    border-top: solid 5px hsl(348, 97%, 39%);
+}
+
+
+a {
+    text-decoration: none;
+}
+
+/*Small Cards*/
+.gridS1, .gridS2, .gridS3, .gridS4, .gridS5, .gridS6, .gridS7, .gridS8 {
+    display: grid;
+    grid-template-rows: 2;
+    grid-template-columns: 1fr 1fr;
+}
+
+.followersSmall {
+    color:  hsl(228, 34%, 66%);
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.logoS{
+    margin-top: 10px;
+    margin-left: 100px;
+}
+
+.numFollowersSmall {
+    color: white;
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.changeS {
+    margin-bottom: 10px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.attribution {
+    margin: 10px 80px;
+    font-size: 10px;
+    color: hsl(228, 34%, 66%);
+}
