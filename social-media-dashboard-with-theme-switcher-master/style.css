@@ -1,19 +1,62 @@
-/*Light Mode*/
-.light {
-    background: linear-gradient(hsl(0, 0%, 100%) 30%, hsl(225, 100%, 98%) 30% 100%);
-    
+/*Dark Mode*/
+:root[class = "dark"]{
+    --background-color: linear-gradient(hsl(232, 19%, 15%) 30%, hsl(230, 17%, 14%) 30% 100%);
+    --header-color: white;
+    --smallText-color: hsl(228, 34%, 66%);
+    --cardBG-color: hsl(228, 28%, 20%);
+    --cardHover-color: hsl(228, 28%, 25%);
 }
+
+/*Light Mode*/
+:root[class = "light"]{
+   --background-color: linear-gradient(hsl(225, 100%, 98%) 30%, hsl(0, 0%, 100%) 30% 100%);
+   --header-color: black;
+   --smallText-color: hsl(228, 12%, 44%);
+   --cardBG-color: hsl(227, 47%, 96%);
+   --cardHover-color: hsl(227, 47%, 90%);
+}
+
+/*For Larger Screens*/
 body {
     margin: 10px 100px;
-    color: white;
+    color: var(--header-color);
     font-family: 'Inter', sans-serif;
-    background: hsl(230, 17%, 14%);
+    background: var(--background-color);
+}
+
+button {
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    margin: 0;
+    border: solid black 1px;
+    outline: none;
+}
+
+.toggleButtons{
+    margin-right: 80px;
+    margin-bottom: 20px;
+}
+
+.toggleText {
+    margin: 0;
+}
+
+.modeDark{
+    display: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.title {
+    margin-bottom: 10px;
 }
 
 h1, .total{
-   margin-bottom: 0;
-   margin-left: 80px;
-}
+    margin: 0 0 0 80px;
+} 
 
 h2 {
     margin: 50px 0 15px 80px;
@@ -25,23 +68,17 @@ h2 {
     align-items: flex-end;
 }
 
-/*Checkbox/toggle switch*/
-.mode {
-    color: hsl(228, 34%, 66%);
-    margin-right: 80px;
-}
 
 .total {
     font-size: 13px;
     margin-bottom: 30px;
-    color: hsl(228, 34%, 66%);
-    display: inline-block;
+    color: var(--smallText-color);
 }
 
 .gridLarge{
     display: grid;
     grid-template-rows: 1;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: minmax(220px, 1fr) minmax(220px, 1fr) minmax(220px, 1fr) minmax(220px, 1fr);
     column-gap: 30px;
     height: 32vh;
     margin: 0 80px;
@@ -58,7 +95,7 @@ h2 {
 
 .gridItem {
     border-radius: 5px;
-    background-color: hsl(228, 28%, 20%);
+    background-color: var(--cardBG-color);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -66,11 +103,12 @@ h2 {
 }
 
 .gridItem:hover {
-    background-color: hsl(228, 28%, 25%);
+    background-color: var(--cardHover-color);
+    cursor: pointer;
 }
 
 .handle {
-   color: hsl(228, 34%, 66%);
+   color: var(--smallText-color);
 }
 
 .numFollowers{
@@ -78,11 +116,11 @@ h2 {
     margin-top: 20px;
     font-weight: bold;
     padding: 0;
-    color: white;
+    color: var(--header-color);
 }
 
 .followers {
-    color:  hsl(228, 34%, 66%);
+    color:  var(--smallText-color);
     letter-spacing: 6px;
 }
 
@@ -111,24 +149,24 @@ svg{
 /*Individual Large Cards*/
 
 .gridL1{
-    grid-column: 1 / span 1;
+    /* grid-column: 1 / span 1; */
     border-top: solid 5px hsl(208, 92%, 53%);
 }
 
 .gridL2{
-    grid-column: 2 / span 1;
+    /* grid-column: 2 / span 1; */
     border-top: solid 5px hsl(203, 89%, 53%);
 }
 
 .gridL3 {
-    grid-column: 3 / span 1;
+    /* grid-column: 3 / span 1; */
     border-top: solid 5px;
     border-image: linear-gradient(.25turn, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
     border-image-slice: 1;
 }
 
 .gridL4 {
-    grid-column: 4 / span 1;
+    /* grid-column: 4 / span 1; */
     border-top: solid 5px hsl(348, 97%, 39%);
 }
 
@@ -138,14 +176,14 @@ a {
 }
 
 /*Small Cards*/
-.gridS1, .gridS2, .gridS3, .gridS4, .gridS5, .gridS6, .gridS7, .gridS8 {
+.gridSmall .gridItem {
     display: grid;
     grid-template-rows: 2;
     grid-template-columns: 1fr 1fr;
 }
 
 .followersSmall {
-    color:  hsl(228, 34%, 66%);
+    color:  var(--smallText-color);
     margin-top: 10px;
     margin-left: 20px;
 }
@@ -156,7 +194,7 @@ a {
 }
 
 .numFollowersSmall {
-    color: white;
+    color: var(--header-color);
     font-size: 30px;
     margin-bottom: 10px;
     margin-left: 20px;
@@ -171,7 +209,76 @@ a {
 }
 
 .attribution {
-    margin: 10px 80px;
+    margin: 20px 80px;
     font-size: 10px;
-    color: hsl(228, 34%, 66%);
+    color: var(--smallText-color);
 }
+
+/* For Screens Smaller Than 375px */
+@media only screen and (max-width: 700px) {
+
+    body{
+        margin: 0;
+    }
+
+    .top {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         padding: 0;
+         margin-left: 80px;
+    }
+    .toggleButtons{
+         margin: 20px 210px 0 0;
+    }
+
+     .top, h1, .total{
+        margin: 0 10px;
+     }
+       
+     h2{
+         margin: 20px 0 10px 80px;
+     }
+
+     .title {
+         border-bottom: solid 1px var(--smallText-color);
+         padding-bottom: 5px;
+     }
+
+    .gridLarge{
+        display: grid;
+        grid-template-columns: minmax(20px, 350px);
+        height: auto;
+        margin: 0 10px;
+        justify-content: center;
+    }
+    
+    .gridSmall{
+        display: grid;
+        grid-template-columns: minmax(20px, 350px);
+        margin: 0 10px;
+        height: auto;
+        justify-content: center;
+    }
+    
+    .gridSmall .gridItem {
+        margin: 0 10px;
+        padding: 10px;
+    }
+    
+    .gridLarge .gridItem {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .followersSmall, .logoS{
+        margin-bottom: 20px;
+    }
+
+    .attribution {
+        margin: 10px 20px;
+        text-align: center;
+    }
+
+  }
+

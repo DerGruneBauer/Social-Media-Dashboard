@@ -1,25 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
   <title>Portfolio 2 | Social Media Dashboard</title>
   <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<!--Use flex to center everything and space the heading apart from the dark mode button-->
+
+
 <div class = "top">
+  <div class ="title">
     <h1>Social Media Dashboard</h1>
-    <label class="mode">Dark Mode<input type="checkbox"/>
-    <span class="slider round"></span> </label>
+    <span class="total">Total Followers: 23,004</span>
+  </div>
+    <div class = toggleButtons>
+      <span class = "toggleText">Light Mode</span>
+      <button class="modeLight" onclick="toggleColorLight()"></button>
+      <button class="modeDark" onclick="toggleColorDark()"></button>
+    </div>
 </div>
-<span class="total">Total Followers: 23,004</span>
 
- 
 
+<div class = 'grid'>
 <div class="gridLarge">
 
  <div class="gridL1 gridItem up">
@@ -109,11 +114,12 @@
   <span class ="numFollowersSmall">1407</span>
   <span class = "changeS"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="4"><path fill="#DC414C" fill-rule="evenodd" d="M0 0l4 4 4-4z"/></svg>12%</span>
   </div>
-
+</div>
 </div>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Remington Greenbauer</a>.
   </div>
+  <script src = "./script.js"></script>
 </body>
 </html>
